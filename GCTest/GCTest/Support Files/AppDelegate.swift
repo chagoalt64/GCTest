@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        //GoogleMaps API Key
+        GMSServices.provideAPIKey("AIzaSyBnyXOcPwvfU_K93BrqASFGMhiEblWK3LE")
+        
         //Init Window
         let navCon = CustomNavigationController()
         window = UIWindow(frame: UIScreen.main.bounds)

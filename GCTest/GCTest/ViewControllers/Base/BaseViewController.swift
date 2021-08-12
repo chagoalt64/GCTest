@@ -43,13 +43,21 @@ class BaseViewController: UIViewController {
         stackView.addArrangedSubview(bottomView)
         
         topView.backgroundColor = .red
+        topView.layer.masksToBounds = true
         bottomView.backgroundColor = .blue
+        bottomView.layer.masksToBounds = true
     }
     
     //MARK: - Public Methods
-    func showMessageAlert(_ message: String, title: String = "Atención") {
+    func resizeTopView(factor: CGFloat) {
+        stackView.distribution = .fill
+        topView.translatesAutoresizingMaskIntoConstraints = false
+        topView.heightAnchor.constraint(equalToConstant: view.frame.height * factor).isActive = true
+    }
+    
+    func showMessageAlert(_ message: String, title: String = "Atención", handler: ((UIAlertAction) -> Void)?) {
         let messageAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        messageAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        messageAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: handler))
         self.present(messageAlert, animated: true, completion: nil)
     }
     
@@ -71,5 +79,25 @@ class BaseViewController: UIViewController {
         optionAlert.addAction(cancelAction)
         
         self.present(optionAlert, animated: true, completion: nil)
+    }
+    
+    func showInputAlert(title: String = "", message: String = "", placeholder: String = "", _ completion: @escaping (_ name: String) -> ()) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = placeholder
+        }
+
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            guard let text = textField.text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            completion(text)
+        })
+        alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }

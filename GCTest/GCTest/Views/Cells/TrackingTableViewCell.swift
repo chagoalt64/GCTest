@@ -32,13 +32,13 @@ class TrackingTableViewCell: UITableViewCell {
         cellView.layer.borderWidth = 1
         cellView.layer.cornerRadius = 6.0
         cellView.layer.shadowColor = UIColor.black.cgColor
-        cellView.layer.shadowOpacity = 0.25
+        cellView.layer.shadowOpacity = 0.5
         cellView.layer.shadowOffset = .zero
-        cellView.layer.shadowRadius = 2
+        cellView.layer.shadowRadius = 3
         cellView.layer.shadowPath = UIBezierPath(rect: cellView.bounds).cgPath
         cellView.layer.shouldRasterize = true
         cellView.layer.rasterizationScale = UIScreen.main.scale
-        cellView.layer.borderColor = UIColor.lightGray.cgColor
+        cellView.layer.borderColor = UIColor.purple.cgColor
         cellView.pin(to: self, top: 8, leading: 16, trailing: -16, bottom: -8)
         
         //Add labels to cellView
@@ -70,6 +70,6 @@ class TrackingTableViewCell: UITableViewCell {
     //MARK: - Public Methods
     func set(name: String, distance: String) {
         nameLabel.text = name
-        distanceLabel.text = distance.appending(" Km")
+        distanceLabel.text = distance
     }
 }

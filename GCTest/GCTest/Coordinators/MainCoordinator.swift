@@ -20,8 +20,10 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func showDetail() {
+    func showDetail(route: Route) {
+        let vm = DetailViewModel(route: route)
         let vc = DetailViewController()
+        vc.setViewModel(vm)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

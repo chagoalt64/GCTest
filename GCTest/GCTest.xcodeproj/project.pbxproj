@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,10 @@
 		24EAA2D726C3794600E3854C /* TrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2D626C3794600E3854C /* TrackingTableViewCell.swift */; };
 		24EAA2DA26C37AB500E3854C /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2D926C37AB500E3854C /* UIView+extensions.swift */; };
 		24EAA2DD26C3858900E3854C /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2DC26C3858900E3854C /* MarginLabel.swift */; };
+		24EAA2E026C4512F00E3854C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2DF26C4512F00E3854C /* LocationManager.swift */; };
+		24EAA2E226C4583400E3854C /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E126C4583300E3854C /* Date+extensions.swift */; };
+		24EAA2E426C4956E00E3854C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E326C4956E00E3854C /* Route.swift */; };
+		7B29511C48D3390092F3D7E3 /* Pods_GCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D6DD125B2B743F89704D1 /* Pods_GCTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,12 @@
 		24EAA2D626C3794600E3854C /* TrackingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTableViewCell.swift; sourceTree = "<group>"; };
 		24EAA2D926C37AB500E3854C /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		24EAA2DC26C3858900E3854C /* MarginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
+		24EAA2DF26C4512F00E3854C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		24EAA2E126C4583300E3854C /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		24EAA2E326C4956E00E3854C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		2A8D6DD125B2B743F89704D1 /* Pods_GCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8399BCBBC559A59736FEED /* Pods-GCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCTest.release.xcconfig"; path = "Target Support Files/Pods-GCTest/Pods-GCTest.release.xcconfig"; sourceTree = "<group>"; };
+		A4AE4BEF4AA86ACD045678D4 /* Pods-GCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCTest.debug.xcconfig"; path = "Target Support Files/Pods-GCTest/Pods-GCTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B29511C48D3390092F3D7E3 /* Pods_GCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +69,8 @@
 			children = (
 				24EAA2A526C3342200E3854C /* GCTest */,
 				24EAA2A426C3342200E3854C /* Products */,
+				8EE516C955C776135658ECD1 /* Pods */,
+				615E05EE95925A2884B43064 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +85,7 @@
 		24EAA2A526C3342200E3854C /* GCTest */ = {
 			isa = PBXGroup;
 			children = (
+				24EAA2DE26C4511700E3854C /* Managers */,
 				24EAA2C626C33DC300E3854C /* Coordinators */,
 				24EAA2D826C37AA100E3854C /* Extensions */,
 				24EAA2CF26C35D6D00E3854C /* Models */,
@@ -158,6 +172,7 @@
 		24EAA2CF26C35D6D00E3854C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				24EAA2E326C4956E00E3854C /* Route.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				24EAA2D926C37AB500E3854C /* UIView+extensions.swift */,
+				24EAA2E126C4583300E3854C /* Date+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +211,31 @@
 			path = Labels;
 			sourceTree = "<group>";
 		};
+		24EAA2DE26C4511700E3854C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				24EAA2DF26C4512F00E3854C /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		615E05EE95925A2884B43064 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A8D6DD125B2B743F89704D1 /* Pods_GCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EE516C955C776135658ECD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE4BEF4AA86ACD045678D4 /* Pods-GCTest.debug.xcconfig */,
+				8D8399BCBBC559A59736FEED /* Pods-GCTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24EAA2B726C3342800E3854C /* Build configuration list for PBXNativeTarget "GCTest" */;
 			buildPhases = (
+				11964A9ACAB9BDACBBAF24B3 /* [CP] Check Pods Manifest.lock */,
 				24EAA29F26C3342100E3854C /* Sources */,
 				24EAA2A026C3342100E3854C /* Frameworks */,
 				24EAA2A126C3342100E3854C /* Resources */,
+				C6F0FFA04C2A817BEDE4A61E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +302,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11964A9ACAB9BDACBBAF24B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GCTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6F0FFA04C2A817BEDE4A61E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GCTest/Pods-GCTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GCTest/Pods-GCTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GCTest/Pods-GCTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24EAA29F26C3342100E3854C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,6 +352,7 @@
 				24EAA2DA26C37AB500E3854C /* UIView+extensions.swift in Sources */,
 				24EAA2D126C35E7400E3854C /* Coordinator.swift in Sources */,
 				24EAA2C126C33D7400E3854C /* DetailViewController.swift in Sources */,
+				24EAA2E426C4956E00E3854C /* Route.swift in Sources */,
 				24EAA2A726C3342200E3854C /* AppDelegate.swift in Sources */,
 				24EAA2BF26C33D6A00E3854C /* MainViewController.swift in Sources */,
 				24EAA2D726C3794600E3854C /* TrackingTableViewCell.swift in Sources */,
@@ -275,7 +361,9 @@
 				24EAA2C326C33D8900E3854C /* MainViewModel.swift in Sources */,
 				24EAA2CC26C340E200E3854C /* BaseViewController.swift in Sources */,
 				24EAA2D326C35EAA00E3854C /* MainCoordinator.swift in Sources */,
+				24EAA2E226C4583400E3854C /* Date+extensions.swift in Sources */,
 				24EAA2CE26C3410200E3854C /* CustomNavigationController.swift in Sources */,
+				24EAA2E026C4512F00E3854C /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -411,6 +499,7 @@
 		};
 		24EAA2B826C3342800E3854C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4AE4BEF4AA86ACD045678D4 /* Pods-GCTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -431,6 +520,7 @@
 		};
 		24EAA2B926C3342800E3854C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8399BCBBC559A59736FEED /* Pods-GCTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
