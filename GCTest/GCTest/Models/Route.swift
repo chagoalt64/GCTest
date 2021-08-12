@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import GoogleMaps
 
 struct Route {
     var name: String
@@ -33,5 +34,22 @@ struct Route {
     
     func distanceToKm() -> String {
         return String(format: "%.3f Km", (distance / 1000))
+    }
+    
+    func getRouteTime() -> String {
+        let difference = endDate - startDate
+        return String(format: "%02d:%02d:%02d", difference.hour ?? 0, difference.minute ?? 0, difference.second ?? 0)
+    }
+    
+    func getInitCoordinates() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(Double(iniLat) ?? 0, (Double(iniLon) ?? 0))
+    }
+    
+    func getEndCoordinates() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(Double(endLat) ?? 0, (Double(endLon) ?? 0))
+    }
+    
+    func getPath() -> GMSPath {
+        return GMSPath(fromEncodedPath: path) ?? GMSPath()
     }
 }

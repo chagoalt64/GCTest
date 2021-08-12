@@ -64,7 +64,7 @@ class MainViewController: BaseViewController {
         //Add MapView
         topView.addSubview(mapView)
         mapView.pin(to: topView)
-        mapView.setMinZoom(1, maxZoom: 17.5)
+        mapView.setMinZoom(1, maxZoom: 19)
         
         //Prepare PolyLine
         polyLine.strokeWidth = 2.0
@@ -100,8 +100,12 @@ extension MainViewController: UITableViewDelegate {
 }
 
 extension MainViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Historico"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title = UILabel()
+        title.attributedText = NSAttributedString(string: "Historico", attributes: Menlo.menloRegularMedium(.white).attributes)
+        title.backgroundColor = .black
+        title.textAlignment = .center
+        return title
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,10 +144,9 @@ extension MainViewController: MainViewModelDelegate {
         polyLine.path = path
         polyLine.map = mapView
         
-        let bounds = GMSCoordinateBounds()
-        bounds.includingPath(path)
+        let bounds = GMSCoordinateBounds(path: path)
         let update = GMSCameraUpdate.fit(bounds, withPadding: 50)
-        mapView.animate(with: update)
+        self.mapView.animate(with: update)
     }
     
     func displayEndPoint(_ location: CLLocation) {

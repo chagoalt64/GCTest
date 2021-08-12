@@ -25,4 +25,10 @@ class DetailViewModel: NSObject {
         super.init()
     }
     
+    //MARK: - Private Methods
+    
+    //MARK: - Public Methods
+    func getRoute() -> Route {
+        return route
+    }
 }

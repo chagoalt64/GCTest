@@ -25,6 +25,10 @@ class BaseViewController: UIViewController {
     
     //MARK: - Private Methods
     private func prepareInterface() {
+        //Set NavigationBar Font
+        self.navigationController?.navigationBar.titleTextAttributes = Menlo.menloRegularLarge(.white).attributes
+        
+        //Set background color
         view.backgroundColor = .white
         
         //Add the StackView
@@ -41,10 +45,7 @@ class BaseViewController: UIViewController {
         //Add top and bottom views to the stack
         stackView.addArrangedSubview(topView)
         stackView.addArrangedSubview(bottomView)
-        
-        topView.backgroundColor = .red
         topView.layer.masksToBounds = true
-        bottomView.backgroundColor = .blue
         bottomView.layer.masksToBounds = true
     }
     

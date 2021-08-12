@@ -52,12 +52,12 @@ class TrackingTableViewCell: UITableViewCell {
         nameLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         cellView.addSubview(distanceTitleLabel)
-        distanceTitleLabel.text = "Distancia:"
+        distanceTitleLabel.attributedText = NSAttributedString(string: "Distancia:", attributes: Menlo.menloRegularSmall(.black).attributes)
         distanceTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         distanceTitleLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         distanceTitleLabel.leadingAnchor.constraint(equalTo: cellView.leadingAnchor).isActive = true
         distanceTitleLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor).isActive = true
-        distanceTitleLabel.widthAnchor.constraint(equalToConstant: 95).isActive = true
+        distanceTitleLabel.widthAnchor.constraint(equalToConstant: 120).isActive = true
         
         cellView.addSubview(distanceLabel)
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +69,7 @@ class TrackingTableViewCell: UITableViewCell {
     
     //MARK: - Public Methods
     func set(name: String, distance: String) {
-        nameLabel.text = name
-        distanceLabel.text = distance
+        nameLabel.attributedText = NSAttributedString(string: name, attributes: Menlo.menloRegularMedium(.black).attributes)
+        distanceLabel.attributedText = NSAttributedString(string: distance, attributes: Menlo.menloRegularSmall(.black).attributes)
     }
 }

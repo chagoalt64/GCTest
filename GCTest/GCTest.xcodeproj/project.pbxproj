@@ -24,6 +24,8 @@
 		24EAA2E026C4512F00E3854C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2DF26C4512F00E3854C /* LocationManager.swift */; };
 		24EAA2E226C4583400E3854C /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E126C4583300E3854C /* Date+extensions.swift */; };
 		24EAA2E426C4956E00E3854C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E326C4956E00E3854C /* Route.swift */; };
+		24EAA2E626C582F100E3854C /* DetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E526C582EF00E3854C /* DetailDataView.swift */; };
+		24EAA2EA26C5995A00E3854C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EAA2E926C5995900E3854C /* Fonts.swift */; };
 		7B29511C48D3390092F3D7E3 /* Pods_GCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D6DD125B2B743F89704D1 /* Pods_GCTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		24EAA2DF26C4512F00E3854C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		24EAA2E126C4583300E3854C /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		24EAA2E326C4956E00E3854C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		24EAA2E526C582EF00E3854C /* DetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataView.swift; sourceTree = "<group>"; };
+		24EAA2E926C5995900E3854C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2A8D6DD125B2B743F89704D1 /* Pods_GCTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8399BCBBC559A59736FEED /* Pods-GCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCTest.release.xcconfig"; path = "Target Support Files/Pods-GCTest/Pods-GCTest.release.xcconfig"; sourceTree = "<group>"; };
 		A4AE4BEF4AA86ACD045678D4 /* Pods-GCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCTest.debug.xcconfig"; path = "Target Support Files/Pods-GCTest/Pods-GCTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,9 +89,10 @@
 		24EAA2A526C3342200E3854C /* GCTest */ = {
 			isa = PBXGroup;
 			children = (
-				24EAA2DE26C4511700E3854C /* Managers */,
 				24EAA2C626C33DC300E3854C /* Coordinators */,
 				24EAA2D826C37AA100E3854C /* Extensions */,
+				24EAA2E826C5991900E3854C /* Helpers */,
+				24EAA2DE26C4511700E3854C /* Managers */,
 				24EAA2CF26C35D6D00E3854C /* Models */,
 				24EAA2C826C33DFF00E3854C /* Resources */,
 				24EAA2BA26C33D1E00E3854C /* Support Files */,
@@ -180,6 +185,7 @@
 		24EAA2D426C3790200E3854C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24EAA2E726C58A5F00E3854C /* Custom */,
 				24EAA2DB26C3856200E3854C /* Labels */,
 				24EAA2D526C3790900E3854C /* Cells */,
 			);
@@ -217,6 +223,22 @@
 				24EAA2DF26C4512F00E3854C /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		24EAA2E726C58A5F00E3854C /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				24EAA2E526C582EF00E3854C /* DetailDataView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		24EAA2E826C5991900E3854C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				24EAA2E926C5995900E3854C /* Fonts.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		615E05EE95925A2884B43064 /* Frameworks */ = {
@@ -356,6 +378,8 @@
 				24EAA2A726C3342200E3854C /* AppDelegate.swift in Sources */,
 				24EAA2BF26C33D6A00E3854C /* MainViewController.swift in Sources */,
 				24EAA2D726C3794600E3854C /* TrackingTableViewCell.swift in Sources */,
+				24EAA2EA26C5995A00E3854C /* Fonts.swift in Sources */,
+				24EAA2E626C582F100E3854C /* DetailDataView.swift in Sources */,
 				24EAA2DD26C3858900E3854C /* MarginLabel.swift in Sources */,
 				24EAA2C526C33DA900E3854C /* DetailViewModel.swift in Sources */,
 				24EAA2C326C33D8900E3854C /* MainViewModel.swift in Sources */,

@@ -68,7 +68,8 @@ extension LocationManager: CLLocationManagerDelegate {
             return
         }
         
-        if ((mostRecentLocation.timestamp - lastSaved.timestamp).second ?? 0) >= 5 {
+        //Control the time between lectures
+        if ((mostRecentLocation.timestamp - lastSaved.timestamp).second ?? 0) >= 1 {
             lastTracking = mostRecentLocation
             didUpdateCurrentLocation(mostRecentLocation)
         }
