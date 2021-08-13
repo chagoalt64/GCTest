@@ -38,7 +38,7 @@ class LocationManager: NSObject {
         let status = CLLocationManager.authorizationStatus()
         switch status {
         case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
         default:
             break
         }

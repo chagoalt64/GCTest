@@ -25,6 +25,9 @@ class DetailDataView: UIView {
     }
     
     func prepareInterface() {
+        //Set view background color
+        backgroundColor = .white
+        
         //Setup verticalStack
         addSubview(verticalStack)
         verticalStack.pin(to: self)
