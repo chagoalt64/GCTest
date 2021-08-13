@@ -9,7 +9,7 @@ import UIKit
 import GoogleMaps
 
 class DetailViewController: BaseViewController {
-
+    
     //MARK: - Private Vars
     private var viewModel: DetailViewModel?
     
@@ -27,7 +27,7 @@ class DetailViewController: BaseViewController {
     private func prepareInterface() {
         //Title
         navigationItem.title = "Tracking Detail"
-
+        
         //Change TopView Size
         resizeTopView(factor: 3/4)
         
@@ -40,7 +40,7 @@ class DetailViewController: BaseViewController {
         mapView.heightAnchor.constraint(equalToConstant: view.bounds.width).isActive = true
         mapView.isUserInteractionEnabled = false
         mapView.setMinZoom(1, maxZoom: 19)
-
+        
         //Add dataView
         topView.addSubview(dataView)
         dataView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ class DetailViewController: BaseViewController {
         shareButton.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
         shareButton.layer.cornerRadius = 6.0
         buttonsStack.addArrangedSubview(shareButton)
-
+        
         //Add delete button
         let deleteButton = UIButton()
         deleteButton.setAttributedTitle(NSAttributedString(string: "DELETE", attributes: Menlo.menloBoldMedium(.white).attributes), for: .normal)
@@ -128,8 +128,10 @@ class DetailViewController: BaseViewController {
     }
     
     @objc func deletePressed() {
-        guard let viewModel = viewModel else { return }
-        viewModel.deleteRoute()
+        showOptionAlert(title: "¿Deseas eliminar este registro?", "Esta operación no se puede deshacer", okHandler: { [weak self] action in
+            guard let viewModel = self?.viewModel else { return }
+            viewModel.deleteRoute()
+        }, cancelHandler: nil)
     }
 }
 
