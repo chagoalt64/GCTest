@@ -114,7 +114,7 @@ class DetailViewController: BaseViewController {
     //MARK: - Public Methods
     func setViewModel(_ viewModel: DetailViewModel) {
         self.viewModel = viewModel
-        self.viewModel?.delegate = self
+        self.viewModel?.setDelegate(self)
     }
     
     //MARK: - Selectors
@@ -128,7 +128,8 @@ class DetailViewController: BaseViewController {
     }
     
     @objc func deletePressed() {
-        //TODO: DeleteStuff
+        guard let viewModel = viewModel else { return }
+        viewModel.deleteRoute()
     }
 }
 

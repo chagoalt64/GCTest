@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mainCoordinator: MainCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         //GoogleMaps API Key
         GMSServices.provideAPIKey("AIzaSyBnyXOcPwvfU_K93BrqASFGMhiEblWK3LE")
         
@@ -28,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Start Coordinator
         mainCoordinator = MainCoordinator(navCon)
         mainCoordinator?.start()
-
+        
         return true
     }
     

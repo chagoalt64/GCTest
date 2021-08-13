@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import GoogleMaps
+import CoreData
 
 struct Route {
     var name: String
@@ -32,6 +33,18 @@ struct Route {
         self.distance = distance
     }
     
+    init(_ route: RouteDAO) {
+        self.name = route.name ?? ""
+        self.iniLat = route.iniLat ?? ""
+        self.iniLon = route.iniLon ?? ""
+        self.endLat = route.endLat ?? ""
+        self.endLon = route.endLon ?? ""
+        self.path = route.path ?? ""
+        self.startDate = route.startDate ?? Date()
+        self.endDate = route.endDate ?? Date()
+        self.distance = route.distance
+    }
+    
     func distanceToKm() -> String {
         return String(format: "%.3f Km", (distance / 1000))
     }
@@ -51,5 +64,14 @@ struct Route {
     
     func getPath() -> GMSPath {
         return GMSPath(fromEncodedPath: path) ?? GMSPath()
+    }
+    
+    static func routesFromDAO(_ items: [RouteDAO]) -> [Route] {
+        var routes = [Route]()
+        items.forEach { item in
+            let route = Route(item)
+            routes.append(route)
+        }
+        return routes
     }
 }

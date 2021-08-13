@@ -13,10 +13,8 @@ protocol DetailViewModelDelegate: NSObjectProtocol {
 
 class DetailViewModel: NSObject {
     
-    //MARK: - Public Vars
-    weak var delegate: DetailViewModelDelegate?
-    
     //MARK: - Private Vars
+    private weak var delegate: DetailViewModelDelegate?
     private var route: Route
     
     //MARK: - Initializers
@@ -24,11 +22,20 @@ class DetailViewModel: NSObject {
         self.route = route
         super.init()
     }
-    
-    //MARK: - Private Methods
-    
+        
     //MARK: - Public Methods
+    func setDelegate(_ delegate: DetailViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
     func getRoute() -> Route {
         return route
+    }
+    
+    func deleteRoute() {
+        guard let delegate = delegate else { return }
+        if CoreDataManager.shared.deleteRoute(route) {
+            delegate.didDeleteRoute()
+        }
     }
 }

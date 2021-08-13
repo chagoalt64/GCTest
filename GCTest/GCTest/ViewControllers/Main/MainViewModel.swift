@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import CoreData
 
 protocol MainViewModelDelegate: NSObjectProtocol {
     func updateCurrentLocationPin(_ location: CLLocation) //Shows current location of the user
@@ -66,8 +67,7 @@ class MainViewModel: NSObject {
     
     //MARK: - Public Methods
     func reloadData() {
-        //TODO: Reload from CoreData
-
+        routes = CoreDataManager.shared.getRoutes()
         guard let delegate = delegate else { return }
         delegate.updateTableView()
     }
@@ -109,15 +109,10 @@ class MainViewModel: NSObject {
     
     func saveRoute(with name: String) {
         guard var currentRoute = currentRoute else { return }
-        
         //Set the route name
         currentRoute.name = name
-        
-        //TODO: Save to CoreData
-
-        //TEMP - Append to the array and reload the tableview
-        routes.append(currentRoute)
-        
+        //Save it to CoreData
+        _ = CoreDataManager.shared.saveRoute(currentRoute)
         //Reloads the data
         reloadData()
         //Start tracking the current location again
